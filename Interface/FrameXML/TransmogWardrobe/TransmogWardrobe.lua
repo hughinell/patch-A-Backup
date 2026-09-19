@@ -5,10 +5,10 @@ local TransmogWardrobe_ok, TransmogWardrobe_err = pcall(function()
     Transmog Wardrobe - client addon for mod-transmog (WoW 3.3.5a).
 
     Browse the appearances your character has collected, preview them on your character, search them by name
-    and apply them to your equipped items. Applying needs a Warpweaver (the transmogrifier NPC) nearby; browsing
+    and apply them to your equipped items. Applying needs Snooeepy (the transmogrifier NPC) nearby; browsing
     and previewing work anywhere.
 
-    Open it with /tmog (or /wardrobe), or with the "Open Collection" option in a Warpweaver's conversation.
+    Open it with /tmog (or /wardrobe), or with the "Open Collection" option in Snooeepy's conversation.
 
     It talks to the server through the core's addon channel: every request is the chat command ".wardrobe ..."
     sent with the "AzerothCore" prefix, and every reply line comes back tagged (see README.md).
@@ -58,7 +58,7 @@ local RESULT_TEXT = {
     [8]   = "You don't have enough tokens.",
     [9]   = "Look restored.",
     [10]  = "There is nothing to restore.",
-    [100] = "Move next to a Warpweaver first.",
+    [100] = "Move next to Snooeepy first.",
     [101] = "That appearance is not in your collection.",
     [102] = "That slot can't be changed.",
     [103] = "The collection system is turned off on this server.",
@@ -304,7 +304,7 @@ local function UpdateButtons()
     if state.near then
         nearText:SetText("")
     else
-        nearText:SetText("Move next to a Warpweaver to apply looks. You can still browse and preview.")
+        nearText:SetText("Move next to Snooeepy to apply looks. You can still browse and preview.")
     end
     costText:SetText(info and ("Cost: " .. FormatMoney(info.cost)) or "")
 end
